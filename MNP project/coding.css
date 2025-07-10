@@ -1,0 +1,402 @@
+/* coding.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0.5rem;
+    background: linear-gradient(to bottom, #d3cce3, #e9e4f0); /* Light theme background */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: auto;
+    transition: background 0.5s ease; /* Smooth transition for background */
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+    background: linear-gradient(to bottom, #1d1d2b, #33334c); /* Dark theme background */
+    color: #e0e0e0;
+}
+
+.container {
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    margin:1.5rem;
+    padding: 20px;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: background 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for container */
+}
+
+body.dark-theme .container {
+    background: #2b2b40; /* Darker background for container */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Stronger shadow in dark theme */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    background-color: #7a5af5; /* Stays purple */
+    color: white;
+    padding: 8px;
+    border-radius: 12px;
+    font-size: 20px;
+}
+
+.header h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1d1d1f; /* Light theme text color */
+    transition: color 0.5s ease; /* Smooth transition for text color */
+}
+
+body.dark-theme .header h1 {
+    color: #f0f0f0; /* Lighter text color in dark theme */
+}
+
+.theme {
+    background: #f4f4f4; /* Light theme button background */
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #555; /* Light theme icon color */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for button */
+    font-size: 18px;
+}
+
+.theme:hover {
+    background: #ddd; /* Hover for light theme */
+}
+
+body.dark-theme .theme {
+    background: #3c3c5a; /* Dark theme button background */
+    color: #f0f0f0; /* Lighter icon color in dark theme */
+}
+
+body.dark-theme .theme:hover {
+    background: #4a4a6b; /* Hover for dark theme */
+}
+
+.prompt-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.prompt-container {
+    position: relative;
+}
+
+.prompt-input {
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+    border: none;
+    background: #f3f0fa; /* Light theme input background */
+    font-size: 14px;
+    resize: vertical;
+    min-height: 80px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+    color: #333; /* Default text color for input */
+}
+
+body.dark-theme .prompt-input {
+    background: #3c3c5a; /* Dark theme input background */
+    color: #e0e0e0; /* Lighter text color in dark theme */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.prompt-input::placeholder { /* Placeholder color */
+    color: #888;
+}
+
+body.dark-theme .prompt-input::placeholder {
+    color: #b0b0b0;
+}
+
+
+.prompt-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(122, 90, 245, 0.3), inset 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* prompt-btn styles are removed from HTML */
+
+.prompt-action {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.select-wrapper {
+    flex: 1;
+    min-width: 150px;
+}
+
+.custom-select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    background: #f3f0fa; /* Light theme select background */
+    border: none;
+    font-size: 14px;
+    color: #333; /* Light theme select text color */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23666' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 5.646a.5.5 0 0 1 .708 0L8 11.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E"); /* Light theme arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for select */
+}
+body.dark-theme .custom-select {
+    background: #3c3c5a; /* Dark theme select background */
+    color: #e0e0e0; /* Lighter text color in dark theme */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23f0f0f0' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 5.646a.5.5 0 0 1 .708 0L8 11.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E"); /* White arrow for dark theme */
+    background-repeat: no-repeat; /* <-- Yeh line add karein */
+    background-position: right 10px center; /* <-- Yeh line add karein */
+    background-size: 16px; /* <-- Yeh line add karein */
+    -webkit-appearance: none; /* <-- Yeh line add karein */
+    -moz-appearance: none; /* <-- Yeh line add karein */
+    appearance: none; /* <-- Yeh line add karein */
+}
+
+
+
+body.dark-theme .custom-select option {
+    background-color: #3c3c5a; /* Ensure option background matches */
+    color: #e0e0e0;
+}
+
+
+.custom-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(122, 90, 245, 0.3), 0 2px 4px rgba(0,0,0,0.05);
+}
+
+
+.generate-btn {
+    flex: 1;
+    min-width: 150px;
+    background: linear-gradient(135deg, #7a5af5, #c2a6ff); /* Stays purple gradient */
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.generate-btn i {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.generate-btn:hover {
+    background: linear-gradient(135deg, #6a4ae4, #b192ff);
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* Gallery Grid */
+.main-content .gallary-grid {
+    display: grid;
+    gap: 15px;
+    margin-top: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+/* Image Card */
+.gallary-grid .img-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    border-radius: 16px;
+    background: #f3f0fa; /* Light theme default card background */
+    border: 1px solid #e0e0e0;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-theme .gallary-grid .img-card:not(.loading) { /* Only change non-loading cards */
+    background: #3c3c5a; /* Dark theme card background */
+    border-color: #55557a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Loading state styling (should remain visually consistent regardless of theme) */
+.gallary-grid .img-card.loading {
+    background: linear-gradient(135deg, #7a5af5, #c2a6ff); /* Stays purple gradient */
+    color: white;
+    box-shadow: 0 6px 12px rgba(122, 90, 245, 0.2);
+}
+
+
+/* Hover Effect */
+.gallary-grid .img-card:not(.loading):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+}
+body.dark-theme .gallary-grid .img-card:not(.loading):hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4); /* Stronger shadow in dark theme hover */
+}
+
+
+/* Image Styling */
+.gallary-grid .img-card img.result-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    display: none;
+}
+
+/* Hide contents when loading */
+.gallary-grid .img-card.loading img.result-img,
+.gallary-grid .img-card.loading .img-overlay {
+    display: none;
+}
+
+/* Status container for spinner and text */
+.gallary-grid .img-card .status-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/* Overlay for download button */
+.gallary-grid .img-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    pointer-events: none;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    transition: all 0.3s ease;
+}
+
+/* Show overlay on hover */
+.gallary-grid .img-card:hover .img-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Download button */
+.gallary-grid .img-download-btn {
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+/* Download button hover effect */
+.gallary-grid .img-download-btn:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Spinner for loading */
+.gallary-grid .img-card.loading .spinner {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Status text for loading */
+.gallary-grid .img-card.loading .status-text {
+    color: white;
+    font-size: 0.9em;
+    padding: 0 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .prompt-action {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .select-wrapper,
+    .generate-btn {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .gallary-grid {
+        grid-template-columns: 1fr;
+    }
+}

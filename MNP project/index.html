@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Generator</title>
+    <link rel="stylesheet" href="coding.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-wrapper">
+                <div class="logo">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <h1>AI Image Generator</h1>
+            </div>
+            <button class="theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </header>
+
+        <div class="main-content">
+            <form action="#" class="prompt-form">
+                <div class="prompt-container">
+                    <textarea class="prompt-input" placeholder="Describe your imagination in detail..." required
+                        autofocus></textarea>
+                    </div>
+
+                <div class="prompt-action">
+                    <div class="select-wrapper">
+                        <select id="modelSelect" class="custom-select" required>
+                            <option value="" disabled selected>Select Model</option>
+                            <option value="flux.1-dev">flux.1-dev (Note: may not be valid Stability AI ID)</option>
+                            <option value="dell.e">dell.e (Note: may not be valid Stability AI ID)</option>
+                            <option value="stable-diffusion-xl-1024-v1-0">Stable Diffusion XL 1.0 (Recommended)</option>
+                            <option value="stable-diffusion-v1-6">Stable Diffusion v1.6</option>
+                        </select>
+                    </div>
+                    <div class="select-wrapper">
+                        <select id="imageCountSelect" class="custom-select">
+                            <option value="" selected disabled>Image Count</option>
+                            <option value="1">1 image</option>
+                            <option value="2">2 images</option>
+                            <option value="3">3 images</option>
+                            <option value="4">4 images</option>
+                        </select>
+                    </div>
+                    <div class="select-wrapper">
+                        <select id="aspectRatioSelect" class="custom-select">
+                            <option value="" selected disabled>Aspect Ratio</option>
+                            <option value="1:1">Square (1:1)</option>
+                            <option value="16:9">Landscape (16:9)</option>
+                            <option value="9:16">Portrait (9:16)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="generate-btn">
+                        <i class="fa-solid fa-wand-sparkles"></i> Generate
+                    </button>
+                </div>
+
+                <div class="gallary-grid">
+                    <div class="img-card loading" id="card1">
+                        <div class="status-container">
+                            <div class="spinner"></div>
+                            <p class="status-text">Generating...</p>
+                        </div>
+                        <img src="" alt="Generated Image 1" class="result-img">
+                        <div class="img-overlay">
+                            <button class="img-download-btn" data-card-id="1">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="img-card" id="card2">
+                        <div class="status-container">
+                            <div class="spinner"></div>
+                            <p class="status-text"></p>
+                        </div>
+                        <img src="" alt="Generated Image 2" class="result-img">
+                        <div class="img-overlay">
+                            <button class="img-download-btn" data-card-id="2">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="img-card" id="card3">
+                        <div class="status-container">
+                            <div class="spinner"></div>
+                            <p class="status-text"></p>
+                        </div>
+                        <img src="" alt="Generated Image 3" class="result-img">
+                        <div class="img-overlay">
+                            <button class="img-download-btn" data-card-id="3">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="img-card" id="card4">
+                        <div class="status-container">
+                            <div class="spinner"></div>
+                            <p class="status-text"></p>
+                        </div>
+                        <img src="" alt="Generated Image 4" class="result-img">
+                        <div class="img-overlay">
+                            <button class="img-download-btn" data-card-id="4">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
